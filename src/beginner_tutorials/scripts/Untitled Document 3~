@@ -1,0 +1,79 @@
+#!/usr/bin/env python
+
+import rospy # ros系统依赖
+# twist 为线速度，角速度一般由cmd_vel发布
+# 查阅对应消息类型并修改
+from geometry_msgs.msg import Twist, Point, Quaternion, PoseWithCovarianceStamped # 几何学消息类型
+
+Class Publishpoint():
+    def __init__(self):
+    	# make the initialization
+	    # create one node with the name of "publish original point"
+	    rospy.init_node('pubish_original_point')
+		# with the node shut down
+		# soemtimes we have it shutdown while other times not, so why???
+		# rospy.on_shutdown(self.shutdown)
+		# with the publisher established an topic
+		# we will publish the position message whose type is Point
+		# 参数解析
+        self.init_pose = rospy.Publisher('/initialpose', PoseWithCovarianceStamped, queue_size=5)
+		
+		# define the corresponding parameters
+		# updating frequency
+		#we'll send a goal to the robot to move 3 meters forward
+		initpose = PoseWithCovarianceStamped()
+		# how to determine frame_id????
+		initpose.header.frame_id = "map"
+		#initpose.header.stamp = rospy.Time.now()
+		initpose.header.stamp = rospy.get_rostime()
+		#goal.target_pose.pose.position.x = 3.0 #3 meters
+		#goal.target_pose.pose.orientation.w = 1.0 #go forward
+		rate = 1
+
+		r = rospy.Rate(rate)
+		# since no paramters transmitted, the publishing funcion will be published here
+	
+	def publishing(self, x, y):
+		initpose = PoseWithCovarianceStamped()
+		initpose.header.frame_id = "map"
+		initpose.header.stamp = rospy.get_rostime()
+		initpose.pose.pose.position.x = x
+		initpose.pose.pose.position.y = y
+		initpose.pose.pose.position.z = 0.0
+		self.initpose.pose.covariance = [0.00017,0.0,0.0,0.0,0.0,0.0,
+										0.0,0.00017,0.0,0.0,0.0,0.0,
+										0.0,0.0,0.00017,0.0,0.0,0.0,
+										0.0,0.0,0.0,0.00000,0.0,0.0,
+										0.0,0.0,0.0,0.0,0.00000,0.0,
+										0.0,0.0,0.0,0.0,0.0,0.00017]
+		# we can determine how many times message we want
+		#count = 0
+		while not rospy.is_shutdown():
+			self.init_pose.publish(initpose)
+	
+	# stop and close automatically when shutting down the node
+	def shutdown(self):
+		# Always stop the robot when shutting down the node.
+		rospy.loginfo("Stopping the robot...")
+		# how to shutdown if we want initial pose to send message?
+		#self.init_pose.publish(Point())
+		rospy.sleep(10)
+			
+
+
+
+# execute the class and publish the message through topic "init_pose"
+if __name__ == '__main__':
+	try:
+		# create one class
+		Test = Publishpoint()
+		# we set the initial position values
+		# 如何确定方差矩阵取值范围
+		point = [1.2, 2.0]
+		# we set this as the broadcasting times we want
+		#nums = 10
+		Test.publishing(point[0], point[1])
+		
+		
+	except:
+		rospy.loginfo("Node terminated!!!")

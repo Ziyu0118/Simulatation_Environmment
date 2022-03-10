@@ -1,0 +1,8 @@
+prefix=/home/ziyubian/catkin_ws/devel
+
+Name: urdf_tutorial
+Description: Description of urdf_tutorial
+Version: 0.2.4
+Cflags: 
+Libs: -L/home/ziyubian/catkin_ws/devel/lib 
+Requires: 

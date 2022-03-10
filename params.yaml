@@ -1,0 +1,13 @@
+background_b: 255
+background_g: 86
+background_r: 69
+rosdistro: 'indigo
+
+  '
+roslaunch:
+  uris: {host_ubuntu__40905: 'http://ubuntu:40905/'}
+rosversion: '1.11.21
+
+  '
+run_id: aaa44992-1351-11ec-86c7-000c29149b7b
+turtlesim: {background_r: 150}

@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+	<node name="pose2destiamte" pkg="testlaunch" type="example1_a"/>
+</launch>

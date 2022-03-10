@@ -1,0 +1,8 @@
+prefix=/home/ziyubian/catkin_ws/devel
+
+Name: urdf
+Description: Description of urdf
+Version: 1.11.15
+Cflags: -I/home/ziyubian/catkin_ws/src/urdf/urdf/include -I/home/ziyubian/catkin_ws/devel/include -I/usr/include
+Libs: -L/home/ziyubian/catkin_ws/devel/lib -lurdf -l:/usr/lib/x86_64-linux-gnu/liburdfdom_sensor.so -l:/usr/lib/x86_64-linux-gnu/liburdfdom_model_state.so -l:/usr/lib/x86_64-linux-gnu/liburdfdom_model.so -l:/usr/lib/x86_64-linux-gnu/liburdfdom_world.so -l:/usr/lib/x86_64-linux-gnu/libconsole_bridge.so -l:/usr/lib/x86_64-linux-gnu/libboost_thread.so -l:/usr/lib/x86_64-linux-gnu/libpthread.so -l:/usr/lib/x86_64-linux-gnu/libtinyxml.so
+Requires: rosconsole_bridge roscpp

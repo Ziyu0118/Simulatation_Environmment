@@ -1,0 +1,8 @@
+prefix=/home/ziyubian/catkin_ws/devel
+
+Name: urdf_parser_plugin
+Description: Description of urdf_parser_plugin
+Version: 1.11.15
+Cflags: -I/home/ziyubian/catkin_ws/src/urdf/urdf_parser_plugin/include -I/usr/include
+Libs: -L/home/ziyubian/catkin_ws/devel/lib 
+Requires: 

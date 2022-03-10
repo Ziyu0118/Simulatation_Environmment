@@ -1,0 +1,8 @@
+prefix=/home/ziyubian/catkin_ws/devel
+
+Name: pr2_description
+Description: Description of pr2_description
+Version: 1.11.14
+Cflags: 
+Libs: -L/home/ziyubian/catkin_ws/devel/lib 
+Requires: xacro

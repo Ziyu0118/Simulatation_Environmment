@@ -1,0 +1,2 @@
+beginner_tutorials:foobar:learning_tf:pr2_common/pr2_common:pr2_common/pr2_dashboard_aggregator:pr2_common/pr2_description:pr2_common/pr2_machine:pr2_common/pr2_msgs:robot_gazebo:robot_room:urdf/urdf:urdf/urdf_parser_plugin:urdf_tutorial
+-DCATKIN_DEVEL_PREFIX=/home/ziyubian/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/ziyubian/catkin_ws/install -G Unix Makefiles

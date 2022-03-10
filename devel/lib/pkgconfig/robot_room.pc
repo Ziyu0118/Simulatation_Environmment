@@ -1,0 +1,8 @@
+prefix=/home/ziyubian/catkin_ws/devel
+
+Name: robot_room
+Description: Description of robot_room
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/ziyubian/catkin_ws/devel/lib 
+Requires: 
